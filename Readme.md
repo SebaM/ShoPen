@@ -4,7 +4,7 @@
 
 ## Readme
 
-Ukrainian version of this readme is available [here](Readme.md).
+Ukrainian version of this readme is available [here](Readme.UA.md).
 
 ## Description
 
