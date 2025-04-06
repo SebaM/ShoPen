@@ -1,6 +1,6 @@
 # ShoPen app
 
-Шо? Pen?
+Shop of Pens
 
 ## Readme
 
