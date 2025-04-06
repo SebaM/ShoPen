@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse, HTMLResponse
+from fastapi.staticfiles import StaticFiles
 from tortoise import Tortoise
 from shopen.settings import DB_CONFIG, SUPER_ADMIN_TOKEN, VERSION
 from tortoise.contrib.fastapi import register_tortoise
@@ -30,7 +31,8 @@ app = FastAPI(title="Shopen API",
               openapi_url="/api/v1/openapi.json",
               docs_url="/api/v1/docs",
               lifespan=lifespan)
-# app.mount('/assets', StaticFiles(directory=STATIC_ROOT), name='assets')
+# Mount static files directory
+app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(user_router, prefix="/api/v1/users", tags=["users"])
 app.include_router(shop_router, prefix="/api/v1/pens", tags=["shop"])
 app.include_router(transaction_router, prefix="/api/v1/transactions", tags=["transactions"])
