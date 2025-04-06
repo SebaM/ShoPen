@@ -1,40 +1,47 @@
 # ShoPen app
+
 Шо? Pen?
 
 ## Readme
-English version of this readme is available [here](Readme_en.md).
 
-## Опис
-Цей застосунок призначений для використання як система під тестування (SUT) для автоматизації тестування API.  
-Це простий застосунок для електронної комерції, який дозволяє користувачам створювати обліковий запис, входити в систему та купувати ручки.  
-Є 2 ролі користувачів: `admin` та `customer`.  
-Адміністратор може створювати, видаляти, редагувати ручки в магазині, а також керувати іншими користувачами.  
-Клієнти можуть купувати ручки.  
+Ukrainian version of this readme is available [here](Readme.md).
 
-## Особливості
+## Description
+
+This app is designed to be a system under test (SUT) for API test automation.  
+It is a simple e-commerce app that allows users to create an account, log in, and buy pens.  
+There are 2 user roles: `admin` and `customer`.  
+Admin can manage pens in the shop as well as other users.  
+Customers can buy pens.
+
+## Features
+
 - ✅ Stateful API
-- ✅ Swagger документація
-- ✅ Аутентифікація за допомогою сесійного токена на бекенді
-- ✅ sqlite база даних, яка не потребує встановлення
-- ✅ покрито юніт-тестами
+- ✅ Swagger doc
+- ✅ Authentication with BE session token
+- ✅ sqlite db, which is does not require installation
+- ✅ covered with unit tests
 
-## Випадки використання
-- Користувачі можуть реєструватися, входити в систему та виходити з неї.
-- Користувачі можуть отримувати та редагувати інформацію про себе.
-- Адміністратори можуть отримувати та редагувати інформацію про будь-якого користувача.
-- Адміністратор може підвищити клієнта до адміністратора.
-- Адміністратор може встановити суму кредиту клієнта для покупки ручок.
-- Адміністратор може додавати, видаляти та змінювати кількість ручок на складі.
-- Будь-який користувач (навіть без аутентифікації) може отримати список ручок.
-- Клієнт може замовити ручки для покупки.
-- Клієнт може завершити операцію покупки протягом короткого періоду часу (за замовчуванням 5 хвилин).
-- Клієнт може скасувати операцію покупки.
-- Клієнт може запросити повернення коштів протягом короткого періоду часу (за замовчуванням 20 хвилин).
-- У разі, якщо клієнт замовляє ручки на велику суму грошей (за замовчуванням 5000), він отримує оптову знижку (за замовчуванням 10%).
-- Адміністратор може отримати знижку 20% за замовчуванням на будь-які покупки.
-- Є сервісний API для скидання налаштувань до заводських: створюється лише 1 користувач та кілька стандартних ручок.
+## use cases
 
-## Запуск локально
-1. Клонувати репозиторій
+- Users can register, log in and log out.
+- Users can get and edit info about themselves
+- Admins can get and edit info about any user
+- Admin can promote customer to become an admin
+- Admin can set customer credit amount to buy pens
+- Admin can add, delete and change stock amount of pens
+- Any user (even without auth) can get list of pens
+- Customer can request pens to be bought
+- Customer can complete purchase operation within a short period of time (5 min by default)
+- Customer can cancel purchase operation
+- Customer can request a refund for a short period of time (20 min by default)
+- In case customer requests pens for a big amount of money (5000 by default), it gets a wholesale discount (10% by
+  default)
+- Admin can get a discount in 20% by default for any purchases
+- There is a service api to do a factory reset: create only 1 user and bunc of default pens
+
+## Run locally
+
+1. Git clone the repo
 2. `pip install -r requirements.txt`
 3. `python -m local`
